@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import ViewHome from './views/ViewHome';
+import ViewFour from "./views/ViewFour"
+import ViewHello from './views/ViewHello';
+import {Routes, Route, Link} from "react-router-dom"
+import { useParams } from 'react-router-dom';
+import ViewYourInput from './views/ViewYourInput';
+
+
+
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Lets Route</h1>
+      <Routes>
+        <Route path='/' element={<ViewHome />} />
+        <Route path='/4' element={<ViewFour />} />
+        <Route path='/hello' element={<ViewHello />} />
+        <Route path='/hello/:color1/:color2' element={<ViewYourInput />} />
+      </Routes>
+      
     </div>
   );
 }
